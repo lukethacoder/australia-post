@@ -1,2 +1,3 @@
 # australia-post
-a super minimal parcel starter for quick JS prototyping
+
+a super minimal [Parcel](https://parceljs.org/) starter for quick JS prototyping
