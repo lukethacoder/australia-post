@@ -1,4 +1,4 @@
 const loaded = () => {
-  console.log('hello world')
+  console.log('Magical ES6 JavaScript is running')
 }
 loaded()
