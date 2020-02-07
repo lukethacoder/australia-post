@@ -6,7 +6,7 @@
 
 # **australia-post**
 
-a super minimal [Parcel](https://parceljs.org/) starter for quick JS prototyping.
+a super minimal [Parcel](https://parceljs.org/) starter for quick JS prototyping feat. [TailwindCSS](https://tailwindcss.com/) for quick styling.
 
 ## Getting Started
 
