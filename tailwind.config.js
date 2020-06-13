@@ -1,15 +1,31 @@
+const XS = '320px'
+const SM = '640px'
+const MD = '768px'
+const LG = '1024px'
+const XL = '1280px'
+const XXL = '1440px'
+const XXXL = '2000px'
+const XXXXL = '2560px'
+
 module.exports = {
   prefix: '',
   important: false,
   separator: ':',
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      xs: XS,
+      sm: SM,
+      md: MD,
+      lg: LG,
+      xl: XL,
+      xxl: XXL,
+      xxxl: XXXL,
     },
     colors: {
+      primary: 'var(--theme-primary)',
+      secondary: 'var(--theme-secondary)',
+      font: 'var(--theme-font)',
+      background: 'var(--theme-background)',
       transparent: 'transparent',
 
       black: '#000',
@@ -40,6 +56,7 @@ module.exports = {
     },
     spacing: {
       px: '1px',
+      '2px': '2px',
       '0': '0',
       '1': '0.25rem',
       '2': '0.5rem',
@@ -50,14 +67,20 @@ module.exports = {
       '8': '2rem',
       '10': '2.5rem',
       '12': '3rem',
+      '13': '3.25rem',
       '16': '4rem',
       '20': '5rem',
       '24': '6rem',
+      '28': '7rem',
       '32': '8rem',
       '40': '10rem',
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '72': '18rem',
+      '84': '20rem',
+      '96': '22rem',
+      '108': '24rem',
     },
     backgroundColor: (theme) => theme('colors'),
     backgroundPosition: {
@@ -161,16 +184,21 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
+      '3xs': '0.625rem', // 10px
+      '2xs': '0.75rem', // 12px
+      xs: '0.875rem', // 14px
+      sm: '1rem', // 16px
+      base: '1.125rem', // 18px
+      lg: '1.375rem', // 22px
+      xl: '1.5rem', // 24px
+      '2xl': '2rem', // 32px
+      '3xl': '2.25rem', // 36px
+      '4xl': '2.5rem', // 40px
+      '5xl': '3.75rem', // 60px
+      '6xl': '4rem', // 64px
+      '7xl': '5rem', // 80px
+      '8xl': '7.5rem', // 120px
+      '9xl': '8.375rem', // 134px
     },
     fontWeight: {
       hairline: '100',
@@ -189,10 +217,14 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     }),
-    inset: {
+    inset: (theme) => ({
+      ...theme('spacing'),
       '0': '0',
+      full: '100%',
+      '-full': '-100%',
       auto: 'auto',
-    },
+      unset: 'unset',
+    }),
     letterSpacing: {
       tighter: '-0.05em',
       tight: '-0.025em',
@@ -219,10 +251,6 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing')),
     }),
-    maxHeight: {
-      full: '100%',
-      screen: '100vh',
-    },
     maxWidth: {
       xs: '20rem',
       sm: '24rem',
@@ -235,7 +263,13 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
+      screen: '100vw',
+      none: 'none',
     },
+    maxHeight: (theme) => ({
+      ...theme('maxWidth'),
+      screen: '100vh',
+    }),
     minHeight: {
       '0': '0',
       full: '100%',
@@ -258,9 +292,13 @@ module.exports = {
     },
     opacity: {
       '0': '0',
+      '20': '0.2',
       '25': '0.25',
+      '40': '0.4',
       '50': '0.5',
+      '60': '0.6',
       '75': '0.75',
+      '80': '0.8',
       '100': '1',
     },
     order: {

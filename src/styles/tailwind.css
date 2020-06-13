@@ -1,0 +1,14 @@
+/* Must define :root vars here or else tailwind won't pick them up */
+:root {
+  --theme-primary: #ca1736;
+  --theme-secondary: #a0aec0;
+
+  --theme-font: #ffffff;
+  --theme-background: #161617;
+}
+
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
